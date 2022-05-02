@@ -4,8 +4,8 @@
 
 Para poder mejorar la reproducibilidad es necesario acordar convenciones para algunos procesos y formatos de tal forma que lo que construyamos pueda integrarse con trabajos previos de manera más rápida. Algunos lineamientos propuestos pueden ser:
 ## Respecto a la organización de los repositorios de información
-- Los archivos que mande cliente se mantienen en su ubicación original o en el repositorio central destinado a cliente en caso de que lo envíe por distintos medios diferenciando por carpetas el contexto y los extractos y dentro de los extractos los extractos hechos on demand y los que pueden ser obtenidos por un stream
-- Se generará una carpeta fuera del repositorio de cliente con el resultado de la información procesada con un readme que haga referencia a la información contenida, un resumen de las transformaciones o procesos de limpieza aplicados y una referencia al recurso (código o jupyter) con el que fueron procesados que estará disponibe en github un ejemplo sería una estructura como esta:
+Los archivos que mande cliente se mantienen en su ubicación original o en el repositorio central destinado a cliente en caso de que lo envíe por distintos medios diferenciando por carpetas el contexto y los extractos y dentro de los extractos los extractos hechos on demand y los que pueden ser obtenidos por un stream
+Se generará una carpeta fuera del repositorio de cliente con el resultado de la información procesada con un readme que haga referencia a la información contenida, un resumen de las transformaciones o procesos de limpieza aplicados y una referencia al recurso (código o jupyter) con el que fueron procesados que estará disponibe en github un ejemplo sería una estructura como esta:
 	- Nombre del proyecto
 		- Minsait
 			- Archivo de contexto 1 (presentación de ventas) -f
@@ -36,7 +36,7 @@ Para poder mejorar la reproducibilidad es necesario acordar convenciones para al
 			- Endpoint
 				- Datos crudos
 ## Respecto a los nombres de los archivos
-- Los nombres de los archivos procesados llevarán una nomenclatura uniforme de al menos 3 elementos comunes en minúsculas separado por guiones bajos.
+Los nombres de los archivos procesados llevarán una nomenclatura uniforme de al menos 3 elementos comunes en minúsculas separado por guiones bajos.
 	- Los elementos comunes de la nomenclatura serían:
 		- ***Identificador del proyecto:*** 4 letras. Ejemplo: waop, seco, ppsi
 		- ***Identificador de proceso:*** 2 letras Ejemplo:
@@ -52,10 +52,10 @@ Para poder mejorar la reproducibilidad es necesario acordar convenciones para al
 	- Un ejemplo de nombre de archivo sería entonces:
 		- waop_dp_metrics-availability_2104-2204.csv
 ## Respecto al de almacenamiento
-- Es preferible almacenar los datos procesados por Minsait en formatos comprimidos. Se recomienda el uso de parquets para subirlos a la nube y el uso de csv para Sharepoint a menos que el archivo exceda el millón de filas o los 100 MB
-- Los archivos procesados deberán ser subidos a los buckets de s3 dispuestos para cada proyecto en una estructura idéntica a la de los repositorios de información. A menos que el cliente haya provisto accesos a su propia infraestructura de cloud.
+Es preferible almacenar los datos procesados por Minsait en formatos comprimidos. Se recomienda el uso de parquets para subirlos a la nube y el uso de csv para Sharepoint a menos que el archivo exceda el millón de filas o los 100 MB
+Los archivos procesados deberán ser subidos a los buckets de s3 dispuestos para cada proyecto en una estructura idéntica a la de los repositorios de información. A menos que el cliente haya provisto accesos a su propia infraestructura de cloud.
 	- Para subir los parquets a los buckets de s3. Se puede recurrir a la librería boto3 autenticándose con su clave secreta y su key id. Por ejemplo para ver el contenido de un bucket puede usar
-	- ``` python
+	``` python
 	  !pip install boto3
 	  import boto3
 	  ######################### Authentication start
@@ -72,7 +72,7 @@ Para poder mejorar la reproducibilidad es necesario acordar convenciones para al
 	      print(obj.key)
 	  ```
 	- Para descargar la información del proyecto una vez autenticado puede usar este comando:
-	- ```python
+	```python
 	  PROJECT_NAME = 'proyectosailab'
 	  OBJECT_NAME = 'se_procesada.zip'
 	  FILE_NAME = './Data.zip'
@@ -80,7 +80,7 @@ Para poder mejorar la reproducibilidad es necesario acordar convenciones para al
 	  s3.Object(proyecto, OBJECT_NAME).download_file(FILE_NAME)
 	  ```
 	- Para cargar información puede usar
-	- ```python
+	```python
 	  PROJECT_NAME = 'waop'
 	  FILE_NAME = 'waop_availability.parquet.gzip'
 	  OBJECT_NAME = 'waop_availability.parquet.gzip'
@@ -88,4 +88,4 @@ Para poder mejorar la reproducibilidad es necesario acordar convenciones para al
 	  s3.meta.client.upload_file(FILE_NAME, PROJECT_NAME, OBJECT_NAME)
 	  ```
 ## Respecto al naming de columnas
-- Se recomienda usar minúsculas y evitar los caracteres especiales y se puede usar la instrucción .clean_names()
+Se recomienda usar minúsculas y evitar los caracteres especiales y se puede usar la instrucción .clean_names()
