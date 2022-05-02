@@ -6,35 +6,35 @@ Para poder mejorar la reproducibilidad es necesario acordar convenciones para al
 ## Respecto a la organización de los repositorios de información
 Los archivos que mande cliente se mantienen en su ubicación original o en el repositorio central destinado a cliente en caso de que lo envíe por distintos medios diferenciando por carpetas el contexto y los extractos y dentro de los extractos los extractos hechos on demand y los que pueden ser obtenidos por un stream
 Se generará una carpeta fuera del repositorio de cliente con el resultado de la información procesada con un readme que haga referencia a la información contenida, un resumen de las transformaciones o procesos de limpieza aplicados y una referencia al recurso (código o jupyter) con el que fueron procesados que estará disponibe en github un ejemplo sería una estructura como esta:
-	- Nombre del proyecto
-		- Minsait
-			- Archivo de contexto 1 (presentación de ventas) -f
-			- Archivo de contexto 2 (planeación de tiempos de proyecto) -f
-			- Entregables - d
-			- Proceso -d
-				- Datos - d
-					- Readme -f
-					- Tablas EDA auxiliares- d
-						- Extracto 1 -f
-					- Datos procesados -d
-						- Extracto 1 -f
-					- Input de modelos -d
-						- Extracto 1 -f
-					- Tablas intermedias - d
-						- Extracto 1 -f
-					- Output de modelos - d
-						- Extracto 1 -f
-					- Tablas para Sandbox - d (tablas consumibles para BI)
-						- Extracto 1 -f
-					-
-					-
-				- Plots - d
-					- waop_ae_ts-availability.png
-		- Cliente
-			- Archivo de contexto 1 (Plantilla de contactos)
-			- Archivo de contexto 2 (Accesos, etc)
-			- Endpoint
-				- Datos crudos
+- Nombre del proyecto
+	- Minsait
+		- Archivo de contexto 1 (presentación de ventas) -f
+		- Archivo de contexto 2 (planeación de tiempos de proyecto) -f
+		- Entregables - d
+		- Proceso -d
+			- Datos - d
+				- Readme -f
+				- Tablas EDA auxiliares- d
+					- Extracto 1 -f
+				- Datos procesados -d
+					- Extracto 1 -f
+				- Input de modelos -d
+					- Extracto 1 -f
+				- Tablas intermedias - d
+					- Extracto 1 -f
+				- Output de modelos - d
+					- Extracto 1 -f
+				- Tablas para Sandbox - d (tablas consumibles para BI)
+					- Extracto 1 -f
+				-
+				-
+			- Plots - d
+				- waop_ae_ts-availability.png
+	- Cliente
+		- Archivo de contexto 1 (Plantilla de contactos)
+		- Archivo de contexto 2 (Accesos, etc)
+		- Endpoint
+			- Datos crudos
 ## Respecto a los nombres de los archivos
 Los nombres de los archivos procesados llevarán una nomenclatura uniforme de al menos 3 elementos comunes en minúsculas separado por guiones bajos.
 	- Los elementos comunes de la nomenclatura serían:
