@@ -51,6 +51,7 @@ Los nombres de los archivos procesados llevarán una nomenclatura uniforme de al
 		- ***Periodo:*** yymm-yymm (opcional)
 	- Un ejemplo de nombre de archivo sería entonces:
 		- waop_dp_metrics-availability_2104-2204.csv
+		
 ## Respecto al de almacenamiento
 Es preferible almacenar los datos procesados por Minsait en formatos comprimidos. Se recomienda el uso de parquets para subirlos a la nube y el uso de csv para Sharepoint a menos que el archivo exceda el millón de filas o los 100 MB
 Los archivos procesados deberán ser subidos a los buckets de s3 dispuestos para cada proyecto en una estructura idéntica a la de los repositorios de información. A menos que el cliente haya provisto accesos a su propia infraestructura de cloud.
@@ -91,3 +92,5 @@ s3.meta.client.upload_file(FILE_NAME, PROJECT_NAME, OBJECT_NAME)
 ```
 ## Respecto al naming de columnas
 Se recomienda usar minúsculas y evitar los caracteres especiales y se puede usar la instrucción .clean_names()
+
+[Checar la estructura de las carpetas en Project Organization](https://github.com/AI-ML-Lab/atom)
