@@ -90,6 +90,10 @@ OBJECT_NAME = 'waop_availability.parquet.gzip'
 
 s3.meta.client.upload_file(FILE_NAME, PROJECT_NAME, OBJECT_NAME)
 ```
+
+## Respecto al trabajo en notebooks
+para usar magic recuerda que ! se usa para todos los usuarios de la máquina y % es sólo para el usuario que está ejecutando
+ 
 ## Respecto al naming de columnas
 Se recomienda usar minúsculas y evitar los caracteres especiales y se puede usar la instrucción .clean_names()
 
