@@ -176,7 +176,7 @@ make html
 ```
 
 y listo en la ruta docs/build/html encontrarás la documentación como a continuación:
-![rtd](images/Captura de pantalla 2023-09-15 1919291.png)
+![rtd](https://github.com/AI-ML-Lab/resources/blob/main/images/Captura%20de%20pantalla%202023-09-15%201919291.png?raw=true)
 
 
 
