@@ -110,7 +110,12 @@ Los tiempos asignados a cada tarea se basan en los siguientes puntajes:
 - 8: Una semana
 ## Documentación funcional con Sphinx
 
-Para hacer documentación formato read the docs con sphinx se recomienda usar un `pip install sphinx` 
+Para hacer documentación formato read the docs con sphinx se recomienda instalar sphinx y el tema de read the docs con los siguientes comandos:
+
+```bash
+pip install sphinx
+pip install sphinx-rtd-theme
+```
 
 una vez instalado ir al proyecto en donde está su módulo y ejecutar lo siguiente: 
 ```bash
@@ -128,10 +133,15 @@ import sys
 sys.path.insert(0, os.path.abspath('..'))
 ```
 
-y sustituir la lista vacía de extensiones por lo siguiente para poder autodocumentar a partir de los docstrings
+sustituir la lista vacía de extensiones por lo siguiente para poder autodocumentar a partir de los docstrings
 
 ```python
 extensions = ["sphinx.ext.autodoc", "sphinx.ext.viewcode", "sphinx.ext.napoleon"]
+```
+y cambiar el valor de la variable html_theme como sigue:
+
+```python
+html_theme = 'sphinx_rtd_theme'
 ```
 guardamos el archivo y en línea de comando ejecutamos aún en el directorio docs:
 
@@ -165,7 +175,8 @@ lo guardamos yejecutamos:
 make html
 ```
 
-y listo en la ruta docs/build/html encontrarás la documentación
+y listo en la ruta docs/build/html encontrarás la documentación como a continuación:
+![rtd](images/Captura de pantalla 2023-09-15 1919291.png)
 
 
 
