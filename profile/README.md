@@ -108,3 +108,64 @@ Los tiempos asignados a cada tarea se basan en los siguientes puntajes:
 - 3: Un día
 - 5: Media semana
 - 8: Una semana
+## Documentación funcional con Sphinx
+
+Para hacer documentación formato read the docs con sphinx se recomienda usar un `pip install sphinx` 
+
+una vez instalado ir al proyecto en donde está su módulo y ejecutar lo siguiente: 
+```bash
+cd docs
+sphinx-quickstart
+```
+en las opciones siguientes puede usarse las opciones por default y rellenar los campos
+
+Lo importante es una vez terminado modificar el archivo conf.py y agregar lo siguiente en las primeras lineas:
+
+```python
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath('..'))
+```
+
+y sustituir la lista vacía de extensiones por lo siguiente para poder autodocumentar a partir de los docstrings
+
+```python
+extensions = ["sphinx.ext.autodoc", "sphinx.ext.viewcode", "sphinx.ext.napoleon"]
+```
+guardamos el archivo y en línea de comando ejecutamos aún en el directorio docs:
+
+```bash
+sphinx-apidoc -o . ..
+```
+por último agregamos el recién creado modules al archivo index.rst como a continuación:
+
+```
+Welcome to vectordb api's documentation!
+========================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+```
+lo guardamos yejecutamos:
+
+```bash
+make html
+```
+
+y listo en la ruta docs/build/html encontrarás la documentación
+
+
+
