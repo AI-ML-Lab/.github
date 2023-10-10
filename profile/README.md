@@ -91,9 +91,13 @@ OBJECT_NAME = 'waop_availability.parquet.gzip'
 s3.meta.client.upload_file(FILE_NAME, PROJECT_NAME, OBJECT_NAME)
 ```
 
+## Respecto a los ambientes
+Es preferible usar Pyenv para manejar ambientes y versiones de python de manera aislada. Puedes ver los detalles de su instalación en windows [aquí](https://pypi.org/project/pyenv-win/)
+
+
 ## Respecto al trabajo en notebooks
 para usar magic recuerda que ! se usa para todos los usuarios de la máquina y % es sólo para el usuario que está ejecutando
- 
+Esto es importante en cuadernos no gestionados por nosotros en local porque podemos afectar dependencias de terceros como en sagemaker. En ese supuesto es preferible usar `%pip install seaborn` a menos que queramos cambiar las dependencias de los demás usuarios.
 ## Respecto al naming de columnas
 Se recomienda usar minúsculas y evitar los caracteres especiales y se puede usar la instrucción .clean_names()
 
