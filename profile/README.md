@@ -2,7 +2,7 @@
 
 ## Convenciones del laboratorio
 
-Para poder mejorar la reproducibilidad es necesario acordar convenciones para algunos procesos y formatos de tal forma que lo que construyamos pueda integrarse con trabajos previos de manera más rápida. Algunos lineamientos propuestos pueden ser:
+Para poder mejorar la reproducibilidad es necesario acordar convenciones para algunos procesos y formatos de tal forma que lo que construyamos pueda integrarse con trabajos previos de manera más rápida. Algunos lineamientos propuestos son:
 ## Respecto a la organización de los repositorios de información
 Los archivos que mande cliente se mantienen en su ubicación original o en el repositorio central destinado a cliente en caso de que lo envíe por distintos medios diferenciando por carpetas el contexto y los extractos y dentro de los extractos los extractos hechos on demand y los que pueden ser obtenidos por un stream
 Se generará una carpeta fuera del repositorio de cliente con el resultado de la información procesada con un readme que haga referencia a la información contenida, un resumen de las transformaciones o procesos de limpieza aplicados y una referencia al recurso (código o jupyter) con el que fueron procesados que estará disponibe en github un ejemplo sería una estructura como esta:
@@ -94,6 +94,10 @@ s3.meta.client.upload_file(FILE_NAME, PROJECT_NAME, OBJECT_NAME)
 ## Respecto a los ambientes
 Es preferible usar Pyenv para manejar ambientes y versiones de python de manera aislada. Puedes ver los detalles de su instalación en windows [aquí](https://pypi.org/project/pyenv-win/)
 
+# Respecto al uso de credenciales
+Las credenciales que se vayana a usar en el proyecto no deben subirse a ningún repositorio ya sea hardcodeadas o en archivos independientes. Es preferible que se usen como variables de ambiente para usar en local y se especifiquen en el readme del proyecto o como secrets en alguno de los proveedores de nube en caso de que sea necesario.
+
+Para hacer push y pull desde el servidor de bitbucket de plaiground_mx es necesario usar la VPN con doble autenticación y usar credenciales de usuario. Sin emargo es posible guardar las credenciales con `git config --global credential.helper store`
 
 ## Respecto al trabajo en notebooks
 para usar magic recuerda que ! se usa para todos los usuarios de la máquina y % es sólo para el usuario que está ejecutando
