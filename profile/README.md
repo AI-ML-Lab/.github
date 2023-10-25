@@ -108,6 +108,11 @@ Se recomienda usar minúsculas y evitar los caracteres especiales y se puede usa
 ## Respecto a la estructura de las carpetas en github
 [Disponible en Project Organization](https://github.com/AI-ML-Lab/atom)
 
+## Respecto a las licencias de modelos
+
+Las licencias pueden cambiar de modelo a modelo y tener mayores o menores restricciones. Una buena guía para abordarlas es la de [RAIL](https://www.licenses.ai/blog/2022/8/18/naming-convention-of-responsible-ai-licenses)
+![RAIL diagram](https://images.squarespace-cdn.com/content/v1/5c2a6d5c45776e85d1482a7e/381a69a4-28d9-4b6a-be5c-516330e7d8b9/diagram.png?format=1500w)
+
 ## Respecto a Scrum
 Los tiempos asignados a cada tarea se basan en los siguientes puntajes:
 - 0.5: *Un café*
