@@ -128,20 +128,20 @@ Los tiempos asignados a cada tarea se basan en los siguientes puntajes:
 Es posible encontrar la plantilla de los aceleradores en el [readme](https://github.com/AI-ML-Lab/resources/blob/main/Readme.md) del repo de resources. Sin embargo podemos resumir la estructura con las siguientes secciones:
 - Encabezado con banner y badges
 - Benchmark
- - Comparación cualitativa
- - Comparativa cuantitativa
-  - Métricas existentes  
+	- Comparación cualitativa
+  	- Métricas existentes 
+	- Comparativa cuantitativa
 - Seguridad
- - De las dependencias
- - De la arquitectura
+	- De las dependencias
+	- De la arquitectura
 - Licencias
 - Integraciones
- - Recomendaciónes de implementación on premise
- - Recomendaciones de implementación en nube
- - Otras plataformas y servicios
+	- Recomendaciónes de implementación on premise
+	- Recomendaciones de implementación en nube
+	- Otras plataformas y servicios
 - Costos
- - Productos lowcode en nube
- - Productos necesarios para su uso con instancias
+	- Productos lowcode en nube
+	- Productos necesarios para su uso con instancias
 - Referencias
 - Tiempo
 
@@ -150,6 +150,8 @@ para la consulta de las versiones usamos el documento [properties.json](https://
 es necesario cambiar el nombre del repositorio y el campo que se requiere haciendo una query con sintaxis [JSONPath](https://jsonpath.com/) como en este ejemplo:
 
 ![image](https://github.com/AI-ML-Lab/.github/assets/26263145/73493667-9bd9-4c59-85b9-fb8d9ce8d60c)
+
+En este ejemplo queremos acceder en el nodo 'repo' al subelemento con el nombre del repositorio 'ac_generacion-imagen' y devolver el atributo 'version' del primer elemento de la lista [0] por lo que la sintaxis sería $.repo.ac_generacion-imagen[0].version
 
 
 ## Documentación funcional con Sphinx
