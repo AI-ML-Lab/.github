@@ -151,7 +151,7 @@ es necesario cambiar el nombre del repositorio y el campo que se requiere hacien
 
 ![image](https://github.com/AI-ML-Lab/.github/assets/26263145/73493667-9bd9-4c59-85b9-fb8d9ce8d60c)
 
-En este ejemplo queremos acceder en el nodo 'repo' al subelemento con el nombre del repositorio 'ac_generacion-imagen' y devolver el atributo 'version' del primer elemento de la lista [0] por lo que la sintaxis sería $.repo.ac_generacion-imagen[0].version
+En este ejemplo queremos acceder en el nodo *'repo'* al subelemento con el nombre del repositorio *'ac_generacion-imagen'* y devolver el atributo *'version'* del primer elemento de la lista *[0]* por lo que la sintaxis sería ```$.repo.ac_generacion-imagen[0].version```
 
 
 ## Documentación funcional con Sphinx
