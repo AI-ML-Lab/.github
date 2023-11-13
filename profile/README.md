@@ -121,6 +121,37 @@ Los tiempos asignados a cada tarea se basan en los siguientes puntajes:
 - 3: Un día
 - 5: Media semana
 - 8: Una semana
+- 
+
+## Sobre la documentación en repositorios
+
+Es posible encontrar la plantilla de los aceleradores en el [readme](https://github.com/AI-ML-Lab/resources/blob/main/Readme.md) del repo de resources. Sin embargo podemos resumir la estructura con las siguientes secciones:
+- Encabezado con banner y badges
+- Benchmark
+ - Comparación cualitativa
+ - Comparativa cuantitativa
+  - Métricas existentes  
+- Seguridad
+ - De las dependencias
+ - De la arquitectura
+- Licencias
+- Integraciones
+ - Recomendaciónes de implementación on premise
+ - Recomendaciones de implementación en nube
+ - Otras plataformas y servicios
+- Costos
+ - Productos lowcode en nube
+ - Productos necesarios para su uso con instancias
+- Referencias
+- Tiempo
+
+Para la configuración de los badges usamos [shield](https://shields.io/docs) para que sean dinámicos. 
+para la consulta de las versiones usamos el documento [properties.json](https://github.com/AI-ML-Lab/resources/blob/main/properties.json)
+es necesario cambiar el nombre del repositorio y el campo que se requiere haciendo una query con sintaxis [JSONPath](https://jsonpath.com/) como en este ejemplo:
+
+![image](https://github.com/AI-ML-Lab/.github/assets/26263145/73493667-9bd9-4c59-85b9-fb8d9ce8d60c)
+
+
 ## Documentación funcional con Sphinx
 
 Para hacer documentación formato read the docs con sphinx se recomienda instalar sphinx y el tema de read the docs con los siguientes comandos:
