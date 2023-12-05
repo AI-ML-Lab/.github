@@ -94,6 +94,13 @@ s3.meta.client.upload_file(FILE_NAME, PROJECT_NAME, OBJECT_NAME)
 ## Respecto a los ambientes
 Es preferible usar Pyenv para manejar ambientes y versiones de python de manera aislada. Puedes ver los detalles de su instalación en windows [aquí](https://pypi.org/project/pyenv-win/)
 
+## Respecto al uso de contenedores
+
+Primero es importante notar que docker no es el único proveedor de contenedores. Sin embargo es el más utilizado, para usar docker primero podemos instalarlo en función de nuestro SO https://docs.docker.com/engine/install/
+una vez instalado podemos correr ´docker ps´  en nuestra línea de comandos para ver que está bien isntalado
+
+
+
 # Respecto al uso de credenciales
 Las credenciales que se vayana a usar en el proyecto no deben subirse a ningún repositorio ya sea hardcodeadas o en archivos independientes. Es preferible que se usen como variables de ambiente para usar en local y se especifiquen en el readme del proyecto o como secrets en alguno de los proveedores de nube en caso de que sea necesario.
 
