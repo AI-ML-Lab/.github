@@ -211,6 +211,12 @@ es necesario cambiar el nombre del repositorio y el campo que se requiere hacien
 
 En este ejemplo queremos acceder en el nodo *'repo'* al subelemento con el nombre del repositorio *'ac_generacion-imagen'* y devolver el atributo *'version'* del primer elemento de la lista *[0]* por lo que la sintaxis sería ```$.repo.ac_generacion-imagen[0].version```
 
+## Respecto a la seguridad
+
+Todos los proyectos, pruebas de concepto y demos deben pasar por una revisión de seguridad por el responsable del proyecto en su versión estable. Los elementos de seguridad a incorporar, revisar y mantener dependerán del proyecto y sus necesidades específicas sin embargo enunciamos algunos rubros que deben considerarse y en caso de no incorporar elementos de seguridad en alguno de los rubros dejar declarada la razón por la cuál no se incorporó
+
+![image](https://github.com/AI-ML-Lab/.github/assets/26263145/05f4cb9a-1231-4261-8fcb-65870813633c)
+
 
 ## Documentación funcional con Sphinx
 
