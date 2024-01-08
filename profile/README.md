@@ -8,7 +8,7 @@ Para poder mejorar la reproducibilidad es necesario acordar convenciones para al
 
 La mayoría de nuestros repos tiene una rama de desarrollo en caso contrario es importante crearla. En caso de querer agregar una característica a algún repo podríamos seguir estos pasos:
 
-1. **Clona el repositorio y crea tu rama:** clona el repocon `git clone` y crear una Rama de Característica Empieza desde la rama dev, ya que es tu rama de integración de características para el desarrollo:
+**1. Clona el repositorio y crea tu rama:** clona el repocon `git clone` y crear una Rama de Característica Empieza desde la rama dev, ya que es tu rama de integración de características para el desarrollo:
 ```bash
 git clone
 git checkout dev
@@ -16,13 +16,14 @@ git pull origin dev # Asegúrate de tener los últimos cambios
 git checkout -b feature/nombre-de-la-característica # Crea y cambia a la nueva rama
 ```
 
-2. **Desarrollar la Característica.** Realiza todos tus cambios en esta rama feature/nombre-de-la-característica. Haz commits de manera atómica y con mensajes descriptivos:
+**2. Desarrolla la Característica:** Realiza todos tus cambios en esta rama feature/nombre-de-la-característica. Haz commits de manera atómica y con mensajes descriptivos:
 
 ```bash
 git add .
 git commit -m "Añadir cambios específicos"
 ```
-Es importante mantener tu rama de característica actualizada con los cambios que otros puedan estar integrando en dev para evitar conflictos más adelante haciendo git pull y git merge de manera regular.
+> [!IMPORTANT]
+> Manten tu rama de característica actualizada con los cambios que otros puedan estar integrando en dev para evitar conflictos más adelante usando los comandos siguientes de manera regular.
 
 ```bash
 git checkout dev
@@ -32,19 +33,16 @@ git merge dev # o puedes usar git rebase dev
 ```
 si la característica está asociada a un issue puede hacer un pull request o merge request
 
-5. Integrar la Característica en Dev
-Después de que la característica ha sido revisada y aprobada, puedes integrarla en dev:
+**3. Integra la Característica en Dev:** Después de que la característica ha sido revisada y aprobada, puedes integrarla en dev:
 
 ```bash
 git checkout dev
 git merge feature/nombre-de-la-característica # o realiza el merge a través de una interfaz de usuario de Git
 git push origin dev
 ```
-6. Despliegue en un Entorno de Pruebas
-En algunos casos puedes querer hacer un despliegue en un entorno de pruebas antes de integrarlo al main. Con la característica ya en dev, puedes desplegar en un entorno de pruebas para realizar pruebas de aceptación de usuario y otras validaciones.
+**4. Despliegue en un Entorno de Pruebas:** En algunos casos puedes querer hacer un despliegue en un entorno de pruebas antes de integrarlo al main. Con la característica ya en dev, puedes desplegar en un entorno de pruebas para realizar pruebas de aceptación de usuario y otras validaciones.
 
-7. Integración a Main y Despliegue a Producción
-Una vez que la característica está probada y es estable en dev y en el entorno de pruebas, puedes prepararte para moverla a main:
+**5. Integración a Main y Despliegue a Producción:** Una vez que la característica está probada y es estable en dev y en el entorno de pruebas, puedes moverla a main. La mayoría de nuestros repos que están en producción siguen un flujo para que al empujar a main se actualice la aplicación en productivo.
 
 ```bash
 git checkout main
