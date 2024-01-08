@@ -3,6 +3,60 @@
 ## Convenciones del laboratorio
 
 Para poder mejorar la reproducibilidad es necesario acordar convenciones para algunos procesos y formatos de tal forma que lo que construyamos pueda integrarse con trabajos previos de manera más rápida. Algunos lineamientos propuestos son:
+
+## Para modificar un repo o agregar alguna característica
+
+La mayoría de nuestros repos tiene una rama de desarrollo en caso contrario es importante crearla. En caso de querer agregar una característica a algún repo podríamos seguir estos pasos:
+
+1. **Clona el repositorio y crea tu rama:** clona el repocon `git clone` y crear una Rama de Característica Empieza desde la rama dev, ya que es tu rama de integración de características para el desarrollo:
+```bash
+git clone
+git checkout dev
+git pull origin dev # Asegúrate de tener los últimos cambios
+git checkout -b feature/nombre-de-la-característica # Crea y cambia a la nueva rama
+```
+
+2. **Desarrollar la Característica.** Realiza todos tus cambios en esta rama feature/nombre-de-la-característica. Haz commits de manera atómica y con mensajes descriptivos:
+
+```bash
+git add .
+git commit -m "Añadir cambios específicos"
+```
+Es importante mantener tu rama de característica actualizada con los cambios que otros puedan estar integrando en dev para evitar conflictos más adelante haciendo git pull y git merge de manera regular.
+
+```bash
+git checkout dev
+git pull origin dev
+git checkout feature/nombre-de-la-característica
+git merge dev # o puedes usar git rebase dev
+```
+si la característica está asociada a un issue puede hacer un pull request o merge request
+
+5. Integrar la Característica en Dev
+Después de que la característica ha sido revisada y aprobada, puedes integrarla en dev:
+
+```bash
+git checkout dev
+git merge feature/nombre-de-la-característica # o realiza el merge a través de una interfaz de usuario de Git
+git push origin dev
+```
+6. Despliegue en un Entorno de Pruebas
+En algunos casos puedes querer hacer un despliegue en un entorno de pruebas antes de integrarlo al main. Con la característica ya en dev, puedes desplegar en un entorno de pruebas para realizar pruebas de aceptación de usuario y otras validaciones.
+
+7. Integración a Main y Despliegue a Producción
+Una vez que la característica está probada y es estable en dev y en el entorno de pruebas, puedes prepararte para moverla a main:
+
+```bash
+git checkout main
+git pull origin main
+git merge dev # o realiza un merge específico de la rama de característica si es la política
+git push origin main
+```
+Es recomendable etiquetar tu código con una nueva versión:
+```bash
+git tag -a v1.0.0 -m "Nueva versión con característica X"
+git push origin --tags
+```
 ## Respecto a la organización de los repositorios de información
 Los archivos que mande cliente se mantienen en su ubicación original o en el repositorio central destinado a cliente en caso de que lo envíe por distintos medios diferenciando por carpetas el contexto y los extractos y dentro de los extractos los extractos hechos on demand y los que pueden ser obtenidos por un stream
 Se generará una carpeta fuera del repositorio de cliente con el resultado de la información procesada con un readme que haga referencia a la información contenida, un resumen de las transformaciones o procesos de limpieza aplicados y una referencia al recurso (código o jupyter) con el que fueron procesados que estará disponibe en github un ejemplo sería una estructura como esta:
@@ -93,16 +147,15 @@ s3.meta.client.upload_file(FILE_NAME, PROJECT_NAME, OBJECT_NAME)
 
 ## Respecto a los ambientes
 Es preferible usar Pyenv para manejar ambientes y versiones de python de manera aislada. Puedes ver los detalles de su instalación en windows [aquí](https://pypi.org/project/pyenv-win/)
+o aún mejor con devcontainers en vscode. Ver el confluence de [mind](https://mind.indra.es/pages/viewpage.action?pageId=731817556)
 
 ## Respecto al uso de contenedores
 
 Primero es importante notar que docker no es el único proveedor de contenedores. Sin embargo es el más utilizado, para usar docker primero podemos instalarlo en función de nuestro SO https://docs.docker.com/engine/install/
 una vez instalado podemos correr ´docker ps´  en nuestra línea de comandos para ver que está bien isntalado
 
-
-
-# Respecto al uso de credenciales
-Las credenciales que se vayana a usar en el proyecto no deben subirse a ningún repositorio ya sea hardcodeadas o en archivos independientes. Es preferible que se usen como variables de ambiente para usar en local y se especifiquen en el readme del proyecto o como secrets en alguno de los proveedores de nube en caso de que sea necesario.
+## Respecto al uso de credenciales
+Las credenciales que se vayana a usar en el proyecto no deben subirse a ningún repositorio ya sea hardcodeadas o en archivos independientes. Es preferible que se usen como variables de ambiente para usar en local y se especifiquen en el readme del proyecto o como secrets en alguno de los proveedores de nube en caso de que sea necesario. Si se opta por .env es importante dejar en el repo un .env.example para que otro desarrollador pueda hacer su propio .env y se se agregen el .env al .gitignore del repositorio.
 
 Para hacer push y pull desde el servidor de bitbucket de plaiground_mx es necesario usar la VPN con doble autenticación y usar credenciales de usuario. Sin emargo es posible guardar las credenciales con `git config --global credential.helper store`
 
