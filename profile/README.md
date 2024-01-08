@@ -11,7 +11,7 @@ La mayoría de nuestros repos tiene una rama de desarrollo en caso contrario es 
 **1. Clona el repositorio y crea tu rama:** clona el repocon `git clone` y crear una Rama de Característica Empieza desde la rama dev, ya que es tu rama de integración de características para el desarrollo:
 ```bash
 git clone
-git checkout dev
+git checkout dev # Nos situamos en la rama de desarrollo
 git pull origin dev # Asegúrate de tener los últimos cambios
 git checkout -b feature/nombre-de-la-característica # Crea y cambia a la nueva rama
 ```
@@ -19,17 +19,17 @@ git checkout -b feature/nombre-de-la-característica # Crea y cambia a la nueva 
 **2. Desarrolla la Característica:** Realiza todos tus cambios en esta rama feature/nombre-de-la-característica. Haz commits de manera atómica y con mensajes descriptivos:
 
 ```bash
-git add .
+git add . # Agregamos los archivos sobre los que hayamos hecho cambios en este ejemplo se usa . para todos los archivos pero se puede especificar sólo un path
 git commit -m "Añadir cambios específicos"
 ```
 > [!IMPORTANT]
 > Manten tu rama de característica actualizada con los cambios que otros puedan estar integrando en dev para evitar conflictos más adelante usando los comandos siguientes de manera regular.
 
 ```bash
-git checkout dev
-git pull origin dev
-git checkout feature/nombre-de-la-característica
-git merge dev # o puedes usar git rebase dev
+git checkout dev #regreessamos a la rama de desarrollo
+git pull origin dev # Descargamos los últimos cambios en dev
+git checkout feature/nombre-de-la-característica # Cambiamos de nuevo a nuestra rama
+git merge dev # integramos los cambios de dev en nuestra rama de característica. También podemos usar git rebase dev 
 ```
 si la característica está asociada a un issue puede hacer un pull request o merge request
 
@@ -37,8 +37,8 @@ si la característica está asociada a un issue puede hacer un pull request o me
 
 ```bash
 git checkout dev
-git merge feature/nombre-de-la-característica # o realiza el merge a través de una interfaz de usuario de Git
-git push origin dev
+git merge feature/nombre-de-la-característica # o realiza el merge a través de una interfaz de usuario de Git. cuando hacemos esto git crea un commit de fusión y se puede mandar con un push
+git push origin dev # integramos nuestros cambios a la rama de dev
 ```
 **4. Despliegue en un Entorno de Pruebas:** En algunos casos puedes querer hacer un despliegue en un entorno de pruebas antes de integrarlo al main. Con la característica ya en dev, puedes desplegar en un entorno de pruebas para realizar pruebas de aceptación de usuario y otras validaciones.
 
