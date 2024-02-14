@@ -301,7 +301,7 @@ az vm create \
   --admin-username azureuser \
   --generate-ssh-keys  
 ```
-
+si es necesario usar la instancia como un servidor de nginx podríamos usar:
 ```bash
 az vm extension set \
   --resource-group "[sandbox resource group name]" \
@@ -312,3 +312,7 @@ az vm extension set \
   --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' \
   --protected-settings '{"commandToExecute": "./configure-nginx.sh"}' 
 ```
+
+Otra opción es lanzar las demos a partir Container Apps en cuyo caso es preferible y en caso de ser ejecuciones cortas montarlas en Azure Functions,
+en caso de ser cargas de datos masivas o paralelizable es preferible usar servicios basados en apache como Spark, Airflow o Kafka.
+
