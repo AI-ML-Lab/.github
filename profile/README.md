@@ -301,3 +301,14 @@ az vm create \
   --admin-username azureuser \
   --generate-ssh-keys  
 ```
+
+```bash
+az vm extension set \
+  --resource-group "[sandbox resource group name]" \
+  --vm-name my-vm \
+  --name customScript \
+  --publisher Microsoft.Azure.Extensions \
+  --version 2.1 \
+  --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' \
+  --protected-settings '{"commandToExecute": "./configure-nginx.sh"}' 
+```
