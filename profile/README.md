@@ -179,7 +179,6 @@ Los tiempos asignados a cada tarea se basan en los siguientes puntajes:
 - 3: Un día
 - 5: Media semana
 - 8: Una semana
-- 
 
 ## Sobre la documentación en repositorios
 
@@ -288,5 +287,17 @@ make html
 y listo en la ruta docs/build/html encontrarás la documentación como a continuación:
 ![rtd](https://github.com/AI-ML-Lab/resources/blob/main/images/Captura%20de%20pantalla%202023-09-15%201919291.png?raw=true)
 
+## Sobre la generación de demos y cuadernos
 
+Las demos generadas deben estar conainerizadas con sus respectivos requirements y versiones para evitar fallas de compatibilidad.
+Estas pueden ser lanzadas en local o en la suscripción del lab. Para este propósito por ejemplo con Azure se podría levantar una instancia con Azure CLI con
 
+```bash
+az vm create \
+  --resource-group "[sandbox resource group name]" \
+  --name my-vm \
+  --public-ip-sku Standard \
+  --image Ubuntu2204 \
+  --admin-username azureuser \
+  --generate-ssh-keys  
+```
