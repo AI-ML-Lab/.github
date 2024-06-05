@@ -226,7 +226,12 @@ pip install sphinx
 pip install sphinx-rtd-theme
 ```
 
-una vez instalado ir al proyecto en donde está su módulo y ejecutar lo siguiente: 
+Debe existir una carpeta donde se van a almacenar los docs, esto lo puedes hacer de la siguiente forma:
+```bash
+mkdir docs
+```
+
+una vez instalado, y la carpeta **docs** creada, entramos a esa carpeta y ejecutamos el siguiente comando el cuál creara la estructura sphinx del proyecto, pero aún no la documentación: 
 ```bash
 cd docs
 sphinx-quickstart
@@ -252,11 +257,34 @@ y cambiar el valor de la variable html_theme como sigue:
 ```python
 html_theme = 'sphinx_rtd_theme'
 ```
-guardamos el archivo y en línea de comando ejecutamos aún en el directorio docs:
+guardamos el archivo y en línea de comando ejecutamos aún en el directorio docs, esto indica que todo lo que este afuera de docs se tiene que documentar:
 
 ```bash
 sphinx-apidoc -o . ..
 ```
+
+tambien podemos apuntar a una carpeta en específico usando el siguiente comando:
+
+```bash
+sphinx-apidoc -o docs carpeta_directorio_elegida/
+```
+
+Este comando creará una estructura en un archivo con terminación **.rst**, este lo podemos editar de igual forma pero respetando las indetaciones del toctree.
+Aquí un ejemplo
+
+```
+Titulo del modulo documentado
+------------------------------
+
+Lo que indica abajo es que de en la ruta "src/functions/" estamos documentando las funciones que aparecen en el archivo **utils**.py
+
+.. automodule:: src.functions.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+```
+
+
 por último agregamos el recién creado modules al archivo index.rst como a continuación:
 
 ```
@@ -278,10 +306,16 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 ```
-lo guardamos yejecutamos:
+lo guardamos y ejecutamos:
 
 ```bash
 make html
+```
+
+también podemos limpiar nuestra ejecución en caso de bugs de la siguiente forma:
+
+```bash
+make clean
 ```
 
 y listo en la ruta docs/build/html encontrarás la documentación como a continuación:
