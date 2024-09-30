@@ -4,6 +4,17 @@
 
 Para poder mejorar la reproducibilidad es necesario acordar convenciones para algunos procesos y formatos de tal forma que lo que construyamos pueda integrarse con trabajos previos de manera más rápida. Algunos lineamientos propuestos son:
 
+## Para documentar un repo
+Los repos deberán contener un readme.md en main que describa mínimamente la funcionalidad de la aplicación o repositorio en cuestión. Es recomendable que contenga al menos estos elementos:
+
+- Título *
+- Objetivo del proyecto (Si viene por solicitud de mercado, iniciativa propia, cliente, etc)*
+- Arquitectura usada
+- Diagrama de secuencias
+- Estructura de carpetas*
+- Quickstart o cómo ejecutar/probar el código contenido (contemplar prerequisitos)*
+- Referencia a documentación funcional(en caso de tenerla)*
+
 ## Para modificar un repo o agregar alguna característica
 
 La mayoría de nuestros repos tiene una rama de desarrollo en caso contrario es importante crearla. En caso de querer agregar una característica a algún repo podríamos seguir estos pasos:
