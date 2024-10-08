@@ -155,8 +155,9 @@ s3.meta.client.upload_file(FILE_NAME, PROJECT_NAME, OBJECT_NAME)
 ```
 
 ## Respecto a los ambientes
-Es preferible usar Pyenv para manejar ambientes y versiones de python de manera aislada. Puedes ver los detalles de su instalación en windows [aquí](https://pypi.org/project/pyenv-win/)
+Es preferible usar **UV** o **Pyenv** para manejar ambientes y versiones de python de manera aislada. Puedes ver los detalles de la instalaciónde pyenv en windows [aquí](https://pypi.org/project/pyenv-win/)
 o aún mejor con devcontainers en vscode. Ver el confluence de [mind](https://mind.indra.es/pages/viewpage.action?pageId=731817556)
+La documentación de uv en local está [aquí](https://github.com/astral-sh/uv) y para suarlo en docker [acá](https://docs.astral.sh/uv/guides/integration/docker/)
 
 ## Respecto al uso de contenedores
 
