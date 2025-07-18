@@ -18,7 +18,7 @@ Los repos deberán contener un readme.md en main que describa mínimamente la fu
 
 > [!NOTE]
 > ### Sobre convenciones de nombramiento de repositorios
-> Para mantener la consistencia y claridad en este portafolio, los repositorios siguen las siguientes convenciones de nombramiento basadas en su propósito:
+> Para mantener la consistencia y claridad en los repositorios, se siguen las siguientes convenciones de nombramiento basadas en su propósito:
 >
 > - **ac\_** : Prefijo para un **Acelerador**. Representa un componente o solución reutilizable diseñado para acelerar el desarrollo.
 > - **de\_** : Prefijo para una **Demostración**. Es un proyecto diseñado para mostrar una tecnología, concepto o capacidad específica.
