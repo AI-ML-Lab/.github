@@ -15,6 +15,16 @@ Los repos deberán contener un readme.md en main que describa mínimamente la fu
 - Quickstart o cómo ejecutar/probar el código contenido (contemplar prerequisitos)*
 - Referencia a documentación funcional(en caso de tenerla)*
 
+
+> [!NOTE]
+> ### Sobre convenciones de nombramiento de repositorios
+> Para mantener la consistencia y claridad en este portafolio, los repositorios siguen las siguientes convenciones de nombramiento basadas en su propósito:
+>
+> - **ac\_** : Prefijo para un **Acelerador**. Representa un componente o solución reutilizable diseñado para acelerar el desarrollo.
+> - **de\_** : Prefijo para una **Demostración**. Es un proyecto diseñado para mostrar una tecnología, concepto o capacidad específica.
+> - **pr\_** : Prefijo para un **Proyecto**. Se refiere a una iniciativa completa y autocontenida con un objetivo y entregable definidos.
+
+
 ## Para modificar un repo o agregar alguna característica
 
 La mayoría de nuestros repos tiene una rama de desarrollo en caso contrario es importante crearla. En caso de querer agregar una característica a algún repo podríamos seguir estos pasos:
