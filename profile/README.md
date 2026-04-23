@@ -372,3 +372,6 @@ az vm extension set \
 Otra opción es lanzar las demos a partir Container Apps en cuyo caso es preferible y en caso de ser ejecuciones cortas montarlas en Azure Functions,
 en caso de ser cargas de datos masivas o paralelizable es preferible usar servicios basados en apache como Spark, Airflow o Kafka.
 
+## REspecto a principios de diseño en interfaces inmersias
+
+Guía de Google de para pantallas transparentes para AI glasses: https://design.google/library/transparent-screens
